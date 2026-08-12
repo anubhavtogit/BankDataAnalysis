@@ -1,3 +1,29 @@
-venv/
+# Virtual environment
 .venv/
+venv/
 env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment variables / secrets
+.env
+.env.*
+
+# Generated data
+data/
+*.json
+*.parquet
+*.csv
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
