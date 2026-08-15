@@ -1,21 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
 # Virtual environment
 .venv/
 venv/
 env/
 
-# Python cache
-__pycache__/
-*.py[cod]
-
-# Environment variables / secrets
+# Environment variables
 .env
 .env.*
-
-# Generated data
-data/
-*.json
-*.parquet
-*.csv
 
 # IDE
 .vscode/
@@ -27,3 +22,10 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Generated banking data
+data/raw/
+
+# Test/cache
+.pytest_cache/
+.mypy_cache/

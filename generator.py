@@ -1,30 +1,20 @@
-from faker import Faker
-import random
-
 import json
+import random
 from pathlib import Path
 
-# from models import Customer, Branch, Merchant, Account
+from faker import Faker
 
-from models import (
-    Customer,
-    Branch,
-    Merchant,
-    Account,
-    Transaction
-)
+from models import Customer, Branch, Merchant, Account
 
-from datetime import datetime, timedelta
 
 fake = Faker("en_IN")
 
 
-# --------------------------------------------------
-# Branch Generator
-# --------------------------------------------------
+# =========================================================
+# BRANCH GENERATOR
+# =========================================================
 
 def generate_branches(count: int = 10) -> list[Branch]:
-    branches = []
 
     cities = [
         ("Kolkata", "West Bengal"),
@@ -39,9 +29,11 @@ def generate_branches(count: int = 10) -> list[Branch]:
         ("Lucknow", "Uttar Pradesh")
     ]
 
+    branches = []
+
     for i in range(1, count + 1):
 
-        city, state = random.choice(cities)
+        city, state = cities[(i - 1) % len(cities)]
 
         branch = Branch(
             branch_id=f"B{i:04d}",
@@ -55,47 +47,33 @@ def generate_branches(count: int = 10) -> list[Branch]:
     return branches
 
 
-# --------------------------------------------------
-# Merchant Generator
-# --------------------------------------------------
+# =========================================================
+# MERCHANT GENERATOR
+# =========================================================
 
 def generate_merchants(count: int = 20) -> list[Merchant]:
-    merchants = []
 
-    merchant_categories = [
-        "E-Commerce",
-        "Food",
-        "Grocery",
-        "Travel",
-        "Fuel",
-        "Healthcare",
-        "Entertainment",
-        "Electronics",
-        "Education",
-        "Retail"
-    ]
-
-    merchant_names = [
-        "Amazon",
-        "Flipkart",
-        "Swiggy",
-        "Zomato",
-        "BigBasket",
-        "IRCTC",
-        "Uber",
-        "Ola",
-        "Apollo Pharmacy",
-        "Reliance Digital",
-        "Myntra",
-        "BookMyShow",
-        "Decathlon",
-        "DMart",
-        "MakeMyTrip",
-        "Ajio",
-        "Croma",
-        "Blinkit",
-        "Zepto",
-        "Tata 1mg"
+    merchant_data = [
+        ("Amazon", "E-Commerce"),
+        ("Flipkart", "E-Commerce"),
+        ("Swiggy", "Food"),
+        ("Zomato", "Food"),
+        ("BigBasket", "Grocery"),
+        ("IRCTC", "Travel"),
+        ("Uber", "Transport"),
+        ("Ola", "Transport"),
+        ("Apollo Pharmacy", "Healthcare"),
+        ("Reliance Digital", "Electronics"),
+        ("Myntra", "Fashion"),
+        ("BookMyShow", "Entertainment"),
+        ("Decathlon", "Retail"),
+        ("DMart", "Grocery"),
+        ("MakeMyTrip", "Travel"),
+        ("Ajio", "Fashion"),
+        ("Croma", "Electronics"),
+        ("Blinkit", "Grocery"),
+        ("Zepto", "Grocery"),
+        ("Tata 1mg", "Healthcare")
     ]
 
     cities = [
@@ -108,12 +86,18 @@ def generate_merchants(count: int = 20) -> list[Merchant]:
         "Pune"
     ]
 
+    merchants = []
+
     for i in range(1, count + 1):
+
+        merchant_name, category = merchant_data[
+            (i - 1) % len(merchant_data)
+        ]
 
         merchant = Merchant(
             merchant_id=f"M{i:04d}",
-            merchant_name=merchant_names[(i - 1) % len(merchant_names)],
-            category=random.choice(merchant_categories),
+            merchant_name=merchant_name,
+            category=category,
             city=random.choice(cities)
         )
 
@@ -122,9 +106,9 @@ def generate_merchants(count: int = 20) -> list[Merchant]:
     return merchants
 
 
-# --------------------------------------------------
-# Customer Generator
-# --------------------------------------------------
+# =========================================================
+# CUSTOMER GENERATOR
+# =========================================================
 
 def generate_customers(
     count: int,
@@ -150,16 +134,17 @@ def generate_customers(
 
         branch = random.choice(branches)
 
-        age = random.randint(18, 70)
-
         customer = Customer(
             customer_id=f"C{i:06d}",
             name=fake.name(),
-            age=age,
+            age=random.randint(18, 70),
             gender=random.choice(["Male", "Female"]),
             occupation=random.choice(occupations),
             city=branch.city,
-            income=round(random.uniform(200000, 2500000), 2)
+            income=round(
+                random.uniform(200000, 2500000),
+                2
+            )
         )
 
         customers.append(customer)
@@ -167,9 +152,9 @@ def generate_customers(
     return customers
 
 
-# --------------------------------------------------
-# Account Generator
-# --------------------------------------------------
+# =========================================================
+# ACCOUNT GENERATOR
+# =========================================================
 
 def generate_accounts(
     customers: list[Customer],
@@ -183,15 +168,33 @@ def generate_accounts(
         "Current"
     ]
 
+    # Group branches by city
+    branches_by_city = {}
+
+    for branch in branches:
+
+        if branch.city not in branches_by_city:
+            branches_by_city[branch.city] = []
+
+        branches_by_city[branch.city].append(branch)
+
     for i, customer in enumerate(customers, start=1):
 
-        branch = random.choice(branches)
+        customer_branches = branches_by_city.get(
+            customer.city,
+            branches
+        )
+
+        branch = random.choice(customer_branches)
 
         account = Account(
             account_id=f"A{i:06d}",
             customer_id=customer.customer_id,
             account_type=random.choice(account_types),
-            balance=round(random.uniform(5000, 500000), 2),
+            balance=round(
+                random.uniform(5000, 500000),
+                2
+            ),
             branch_id=branch.branch_id
         )
 
@@ -200,239 +203,78 @@ def generate_accounts(
     return accounts
 
 
-if __name__ == "__main__":
-    import json
-    import os
+# =========================================================
+# MASTER DATA GENERATOR
+# =========================================================
 
-    # generate sample data
+def generate_master_data():
+
+    print("Generating branches...")
+
     branches = generate_branches(10)
+
+    print("Generating merchants...")
+
     merchants = generate_merchants(20)
-    customers = generate_customers(50, branches)
-    accounts = generate_accounts(customers, branches)
 
-    output = {
-        "branches": [b.__dict__ for b in branches],
-        "merchants": [m.__dict__ for m in merchants],
-        "customers": [c.__dict__ for c in customers],
-        "accounts": [a.__dict__ for a in accounts],
-    }
+    print("Generating customers...")
 
-    os.makedirs("data", exist_ok=True)
-    out_path = os.path.join("data", "generated.json")
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
-
-    print(f"Generated: branches={len(branches)} merchants={len(merchants)} customers={len(customers)} accounts={len(accounts)} -> {out_path}")
-
-    import json
-from pathlib import Path
-
-
-def generate_master_data(
-    branch_count: int = 10,
-    merchant_count: int = 20,
-    customer_count: int = 50
-):
-    # Generate branches
-    branches = generate_branches(branch_count)
-
-    # Generate merchants
-    merchants = generate_merchants(merchant_count)
-
-    # Generate customers
     customers = generate_customers(
-        count=customer_count,
+        count=100,
         branches=branches
     )
 
-    # Generate accounts
+    print("Generating accounts...")
+
     accounts = generate_accounts(
         customers=customers,
         branches=branches
     )
 
-    # Prepare output
-    data = {
-        "branches": [
-            branch.model_dump(mode="json")
-            for branch in branches
-        ],
-        "merchants": [
-            merchant.model_dump(mode="json")
-            for merchant in merchants
-        ],
-        "customers": [
-            customer.model_dump(mode="json")
-            for customer in customers
-        ],
-        "accounts": [
-            account.model_dump(mode="json")
-            for account in accounts
-        ]
-    }
-
-    # Create data directory
-    output_dir = Path("data")
-    output_dir.mkdir(exist_ok=True)
-
-    # Output file
-    output_file = output_dir / "generated.json"
-
-    # Write JSON
-    with open(output_file, "w", encoding="utf-8") as file:
-        json.dump(data, file, indent=4, ensure_ascii=False)
-
     return {
-        "branches": len(branches),
-        "merchants": len(merchants),
-        "customers": len(customers),
-        "accounts": len(accounts),
-        "file": str(output_file)
+        "branches": branches,
+        "merchants": merchants,
+        "customers": customers,
+        "accounts": accounts
     }
 
 
-from datetime import datetime, timedelta
+# =========================================================
+# SAVE DATA TO JSON
+# =========================================================
 
+def save_master_data(data):
 
-# -----------------------------------------
-# Transaction Generator
-# -----------------------------------------
+    output_directory = Path("data/raw")
 
-def generate_transactions(
-    accounts: list[Account],
-    merchants: list[Merchant],
-    count: int = 100
-) -> list[Transaction]:
+    output_directory.mkdir(
+        parents=True,
+        exist_ok=True
+    )
 
-    transactions = []
+    for dataset_name, records in data.items():
 
-    transaction_types = [
-        "Purchase",
-        "Withdrawal",
-        "Deposit",
-        "Transfer"
-    ]
-
-    payment_methods = [
-        "UPI",
-        "CARD",
-        "ATM",
-        "NEFT",
-        "IMPS"
-    ]
-
-    for i in range(1, count + 1):
-
-        # Pick an existing account
-        account = random.choice(accounts)
-
-        transaction_type = random.choice(transaction_types)
-
-        payment_method = random.choice(payment_methods)
-
-        amount = round(
-            random.uniform(100, 50000),
-            2
+        file_path = (
+            output_directory /
+            f"{dataset_name}.json"
         )
 
-        merchant_id = None
+        records_as_dict = [
+            record.model_dump()
+            for record in records
+        ]
 
-        # -----------------------------------------
-        # PURCHASE
-        # -----------------------------------------
+        with open(
+            file_path,
+            "w",
+            encoding="utf-8"
+        ) as file:
 
-        if transaction_type == "Purchase":
+            json.dump(
+                records_as_dict,
+                file,
+                indent=4,
+                ensure_ascii=False
+            )
 
-            merchant = random.choice(merchants)
-
-            merchant_id = merchant.merchant_id
-
-            if account.balance >= amount:
-
-                status = "SUCCESS"
-
-                # Deduct money
-                account.balance -= amount
-
-            else:
-
-                status = "FAILED"
-
-        # -----------------------------------------
-        # WITHDRAWAL
-        # -----------------------------------------
-
-        elif transaction_type == "Withdrawal":
-
-            payment_method = "ATM"
-
-            if account.balance >= amount:
-
-                status = "SUCCESS"
-
-                account.balance -= amount
-
-            else:
-
-                status = "FAILED"
-
-        # -----------------------------------------
-        # DEPOSIT
-        # -----------------------------------------
-
-        elif transaction_type == "Deposit":
-
-            payment_method = "CASH"
-
-            status = "SUCCESS"
-
-            account.balance += amount
-
-        # -----------------------------------------
-        # TRANSFER
-        # -----------------------------------------
-
-        else:
-
-            payment_method = random.choice([
-                "NEFT",
-                "IMPS"
-            ])
-
-            if account.balance >= amount:
-
-                status = "SUCCESS"
-
-                account.balance -= amount
-
-            else:
-
-                status = "FAILED"
-
-        # -----------------------------------------
-        # Timestamp
-        # -----------------------------------------
-
-        timestamp = datetime.now() - timedelta(
-            minutes=random.randint(0, 1440)
-        )
-
-        # -----------------------------------------
-        # Create transaction
-        # -----------------------------------------
-
-        transaction = Transaction(
-            transaction_id=f"T{i:08d}",
-            account_id=account.account_id,
-            customer_id=account.customer_id,
-            merchant_id=merchant_id,
-            amount=amount,
-            transaction_type=transaction_type,
-            payment_method=payment_method,
-            status=status,
-            timestamp=timestamp
-        )
-
-        transactions.append(transaction)
-
-    return transactions
+        print(f"Created: {file_path}")

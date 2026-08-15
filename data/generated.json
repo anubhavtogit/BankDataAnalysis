@@ -1,0 +1,990 @@
+{
+    "branches": [
+        {
+            "branch_id": "B0001",
+            "branch_name": "Lucknow Branch 1",
+            "city": "Lucknow",
+            "state": "Uttar Pradesh"
+        },
+        {
+            "branch_id": "B0002",
+            "branch_name": "Lucknow Branch 2",
+            "city": "Lucknow",
+            "state": "Uttar Pradesh"
+        },
+        {
+            "branch_id": "B0003",
+            "branch_name": "Jaipur Branch 3",
+            "city": "Jaipur",
+            "state": "Rajasthan"
+        },
+        {
+            "branch_id": "B0004",
+            "branch_name": "Chennai Branch 4",
+            "city": "Chennai",
+            "state": "Tamil Nadu"
+        },
+        {
+            "branch_id": "B0005",
+            "branch_name": "Bangalore Branch 5",
+            "city": "Bangalore",
+            "state": "Karnataka"
+        },
+        {
+            "branch_id": "B0006",
+            "branch_name": "Pune Branch 6",
+            "city": "Pune",
+            "state": "Maharashtra"
+        },
+        {
+            "branch_id": "B0007",
+            "branch_name": "Ahmedabad Branch 7",
+            "city": "Ahmedabad",
+            "state": "Gujarat"
+        },
+        {
+            "branch_id": "B0008",
+            "branch_name": "Ahmedabad Branch 8",
+            "city": "Ahmedabad",
+            "state": "Gujarat"
+        },
+        {
+            "branch_id": "B0009",
+            "branch_name": "Pune Branch 9",
+            "city": "Pune",
+            "state": "Maharashtra"
+        },
+        {
+            "branch_id": "B0010",
+            "branch_name": "Hyderabad Branch 10",
+            "city": "Hyderabad",
+            "state": "Telangana"
+        }
+    ],
+    "merchants": [
+        {
+            "merchant_id": "M0001",
+            "merchant_name": "Amazon",
+            "category": "Retail",
+            "city": "Hyderabad"
+        },
+        {
+            "merchant_id": "M0002",
+            "merchant_name": "Flipkart",
+            "category": "Electronics",
+            "city": "Pune"
+        },
+        {
+            "merchant_id": "M0003",
+            "merchant_name": "Swiggy",
+            "category": "Healthcare",
+            "city": "Delhi"
+        },
+        {
+            "merchant_id": "M0004",
+            "merchant_name": "Zomato",
+            "category": "Entertainment",
+            "city": "Kolkata"
+        },
+        {
+            "merchant_id": "M0005",
+            "merchant_name": "BigBasket",
+            "category": "Travel",
+            "city": "Pune"
+        },
+        {
+            "merchant_id": "M0006",
+            "merchant_name": "IRCTC",
+            "category": "Entertainment",
+            "city": "Hyderabad"
+        },
+        {
+            "merchant_id": "M0007",
+            "merchant_name": "Uber",
+            "category": "Education",
+            "city": "Bangalore"
+        },
+        {
+            "merchant_id": "M0008",
+            "merchant_name": "Ola",
+            "category": "Entertainment",
+            "city": "Bangalore"
+        },
+        {
+            "merchant_id": "M0009",
+            "merchant_name": "Apollo Pharmacy",
+            "category": "Education",
+            "city": "Hyderabad"
+        },
+        {
+            "merchant_id": "M0010",
+            "merchant_name": "Reliance Digital",
+            "category": "Food",
+            "city": "Hyderabad"
+        },
+        {
+            "merchant_id": "M0011",
+            "merchant_name": "Myntra",
+            "category": "Healthcare",
+            "city": "Hyderabad"
+        },
+        {
+            "merchant_id": "M0012",
+            "merchant_name": "BookMyShow",
+            "category": "Grocery",
+            "city": "Kolkata"
+        },
+        {
+            "merchant_id": "M0013",
+            "merchant_name": "Decathlon",
+            "category": "E-Commerce",
+            "city": "Hyderabad"
+        },
+        {
+            "merchant_id": "M0014",
+            "merchant_name": "DMart",
+            "category": "Retail",
+            "city": "Delhi"
+        },
+        {
+            "merchant_id": "M0015",
+            "merchant_name": "MakeMyTrip",
+            "category": "Healthcare",
+            "city": "Delhi"
+        },
+        {
+            "merchant_id": "M0016",
+            "merchant_name": "Ajio",
+            "category": "Education",
+            "city": "Pune"
+        },
+        {
+            "merchant_id": "M0017",
+            "merchant_name": "Croma",
+            "category": "Entertainment",
+            "city": "Hyderabad"
+        },
+        {
+            "merchant_id": "M0018",
+            "merchant_name": "Blinkit",
+            "category": "Healthcare",
+            "city": "Delhi"
+        },
+        {
+            "merchant_id": "M0019",
+            "merchant_name": "Zepto",
+            "category": "Grocery",
+            "city": "Hyderabad"
+        },
+        {
+            "merchant_id": "M0020",
+            "merchant_name": "Tata 1mg",
+            "category": "Food",
+            "city": "Pune"
+        }
+    ],
+    "customers": [
+        {
+            "customer_id": "C000001",
+            "name": "Rushil Mane",
+            "age": 29,
+            "gender": "Female",
+            "occupation": "Teacher",
+            "city": "Bangalore",
+            "income": 520561.88
+        },
+        {
+            "customer_id": "C000002",
+            "name": "Sai Srinivasan",
+            "age": 59,
+            "gender": "Female",
+            "occupation": "Software Engineer",
+            "city": "Pune",
+            "income": 1680109.1
+        },
+        {
+            "customer_id": "C000003",
+            "name": "Dipta Garde",
+            "age": 19,
+            "gender": "Female",
+            "occupation": "Government Employee",
+            "city": "Pune",
+            "income": 455668.41
+        },
+        {
+            "customer_id": "C000004",
+            "name": "Sathvik Talwar",
+            "age": 64,
+            "gender": "Female",
+            "occupation": "Government Employee",
+            "city": "Pune",
+            "income": 1424696.82
+        },
+        {
+            "customer_id": "C000005",
+            "name": "Gauri Setty",
+            "age": 25,
+            "gender": "Female",
+            "occupation": "Software Engineer",
+            "city": "Lucknow",
+            "income": 1974762.0
+        },
+        {
+            "customer_id": "C000006",
+            "name": "Ansh Bava",
+            "age": 26,
+            "gender": "Male",
+            "occupation": "Teacher",
+            "city": "Pune",
+            "income": 2287706.95
+        },
+        {
+            "customer_id": "C000007",
+            "name": "Max Dua",
+            "age": 50,
+            "gender": "Female",
+            "occupation": "Student",
+            "city": "Pune",
+            "income": 606978.81
+        },
+        {
+            "customer_id": "C000008",
+            "name": "Bhanumati Jhaveri",
+            "age": 22,
+            "gender": "Female",
+            "occupation": "Doctor",
+            "city": "Jaipur",
+            "income": 1873866.53
+        },
+        {
+            "customer_id": "C000009",
+            "name": "Avni Hans",
+            "age": 52,
+            "gender": "Female",
+            "occupation": "Government Employee",
+            "city": "Hyderabad",
+            "income": 2158142.76
+        },
+        {
+            "customer_id": "C000010",
+            "name": "Veer Shroff",
+            "age": 49,
+            "gender": "Female",
+            "occupation": "Government Employee",
+            "city": "Jaipur",
+            "income": 1099786.98
+        },
+        {
+            "customer_id": "C000011",
+            "name": "Max Dhingra",
+            "age": 25,
+            "gender": "Female",
+            "occupation": "Government Employee",
+            "city": "Ahmedabad",
+            "income": 483106.98
+        },
+        {
+            "customer_id": "C000012",
+            "name": "Fiyaz Sastry",
+            "age": 57,
+            "gender": "Female",
+            "occupation": "Designer",
+            "city": "Pune",
+            "income": 424995.56
+        },
+        {
+            "customer_id": "C000013",
+            "name": "Yutika Banik",
+            "age": 39,
+            "gender": "Female",
+            "occupation": "Designer",
+            "city": "Ahmedabad",
+            "income": 1832530.48
+        },
+        {
+            "customer_id": "C000014",
+            "name": "Zehaan Goswami",
+            "age": 65,
+            "gender": "Female",
+            "occupation": "Accountant",
+            "city": "Chennai",
+            "income": 1774847.16
+        },
+        {
+            "customer_id": "C000015",
+            "name": "Sneha Mani",
+            "age": 69,
+            "gender": "Male",
+            "occupation": "Teacher",
+            "city": "Ahmedabad",
+            "income": 663246.56
+        },
+        {
+            "customer_id": "C000016",
+            "name": "Yochana Swamy",
+            "age": 64,
+            "gender": "Female",
+            "occupation": "Teacher",
+            "city": "Hyderabad",
+            "income": 1796710.41
+        },
+        {
+            "customer_id": "C000017",
+            "name": "Kamala Samra",
+            "age": 69,
+            "gender": "Male",
+            "occupation": "Sales Manager",
+            "city": "Pune",
+            "income": 1594843.75
+        },
+        {
+            "customer_id": "C000018",
+            "name": "Hardik Kota",
+            "age": 20,
+            "gender": "Female",
+            "occupation": "Consultant",
+            "city": "Lucknow",
+            "income": 1235734.68
+        },
+        {
+            "customer_id": "C000019",
+            "name": "Kavya Chowdhury",
+            "age": 32,
+            "gender": "Female",
+            "occupation": "Sales Manager",
+            "city": "Bangalore",
+            "income": 253558.08
+        },
+        {
+            "customer_id": "C000020",
+            "name": "Amol Sehgal",
+            "age": 22,
+            "gender": "Male",
+            "occupation": "Sales Manager",
+            "city": "Hyderabad",
+            "income": 527571.69
+        },
+        {
+            "customer_id": "C000021",
+            "name": "Wridesh Date",
+            "age": 56,
+            "gender": "Female",
+            "occupation": "Sales Manager",
+            "city": "Jaipur",
+            "income": 330554.33
+        },
+        {
+            "customer_id": "C000022",
+            "name": "Aarini Kakar",
+            "age": 47,
+            "gender": "Male",
+            "occupation": "Designer",
+            "city": "Hyderabad",
+            "income": 1480221.78
+        },
+        {
+            "customer_id": "C000023",
+            "name": "Ekapad Biswas",
+            "age": 63,
+            "gender": "Female",
+            "occupation": "Student",
+            "city": "Chennai",
+            "income": 1671601.29
+        },
+        {
+            "customer_id": "C000024",
+            "name": "Sathvik Prashad",
+            "age": 39,
+            "gender": "Male",
+            "occupation": "Doctor",
+            "city": "Lucknow",
+            "income": 830395.35
+        },
+        {
+            "customer_id": "C000025",
+            "name": "Nathan Vaidya",
+            "age": 52,
+            "gender": "Female",
+            "occupation": "Designer",
+            "city": "Bangalore",
+            "income": 1325623.18
+        },
+        {
+            "customer_id": "C000026",
+            "name": "Tanmayi More",
+            "age": 24,
+            "gender": "Male",
+            "occupation": "Consultant",
+            "city": "Jaipur",
+            "income": 1808012.12
+        },
+        {
+            "customer_id": "C000027",
+            "name": "Dipta Behl",
+            "age": 24,
+            "gender": "Male",
+            "occupation": "Sales Manager",
+            "city": "Bangalore",
+            "income": 809355.15
+        },
+        {
+            "customer_id": "C000028",
+            "name": "Saksham Mody",
+            "age": 40,
+            "gender": "Male",
+            "occupation": "Government Employee",
+            "city": "Ahmedabad",
+            "income": 2306462.49
+        },
+        {
+            "customer_id": "C000029",
+            "name": "Vansha Dasgupta",
+            "age": 21,
+            "gender": "Male",
+            "occupation": "Consultant",
+            "city": "Pune",
+            "income": 1702080.27
+        },
+        {
+            "customer_id": "C000030",
+            "name": "Januja Keer",
+            "age": 40,
+            "gender": "Male",
+            "occupation": "Accountant",
+            "city": "Bangalore",
+            "income": 2366500.54
+        },
+        {
+            "customer_id": "C000031",
+            "name": "Vamakshi Sinha",
+            "age": 46,
+            "gender": "Male",
+            "occupation": "Accountant",
+            "city": "Chennai",
+            "income": 271777.93
+        },
+        {
+            "customer_id": "C000032",
+            "name": "Gautami Soman",
+            "age": 55,
+            "gender": "Male",
+            "occupation": "Accountant",
+            "city": "Chennai",
+            "income": 2144955.7
+        },
+        {
+            "customer_id": "C000033",
+            "name": "Gauri Banerjee",
+            "age": 51,
+            "gender": "Female",
+            "occupation": "Doctor",
+            "city": "Pune",
+            "income": 1448171.2
+        },
+        {
+            "customer_id": "C000034",
+            "name": "Edhitha Trivedi",
+            "age": 68,
+            "gender": "Female",
+            "occupation": "Doctor",
+            "city": "Ahmedabad",
+            "income": 749547.93
+        },
+        {
+            "customer_id": "C000035",
+            "name": "Vritti Batra",
+            "age": 70,
+            "gender": "Female",
+            "occupation": "Software Engineer",
+            "city": "Jaipur",
+            "income": 521686.42
+        },
+        {
+            "customer_id": "C000036",
+            "name": "Sara Pandit",
+            "age": 64,
+            "gender": "Female",
+            "occupation": "Government Employee",
+            "city": "Pune",
+            "income": 525645.21
+        },
+        {
+            "customer_id": "C000037",
+            "name": "Shivansh Lad",
+            "age": 68,
+            "gender": "Female",
+            "occupation": "Designer",
+            "city": "Ahmedabad",
+            "income": 322958.77
+        },
+        {
+            "customer_id": "C000038",
+            "name": "Anmol Kala",
+            "age": 27,
+            "gender": "Female",
+            "occupation": "Student",
+            "city": "Jaipur",
+            "income": 1545578.41
+        },
+        {
+            "customer_id": "C000039",
+            "name": "Jairaj Shankar",
+            "age": 55,
+            "gender": "Male",
+            "occupation": "Government Employee",
+            "city": "Hyderabad",
+            "income": 1970995.68
+        },
+        {
+            "customer_id": "C000040",
+            "name": "Ranbir Sahota",
+            "age": 19,
+            "gender": "Male",
+            "occupation": "Student",
+            "city": "Lucknow",
+            "income": 2306574.45
+        },
+        {
+            "customer_id": "C000041",
+            "name": "Aditya Contractor",
+            "age": 59,
+            "gender": "Female",
+            "occupation": "Teacher",
+            "city": "Hyderabad",
+            "income": 387189.8
+        },
+        {
+            "customer_id": "C000042",
+            "name": "Vasana Om",
+            "age": 34,
+            "gender": "Male",
+            "occupation": "Doctor",
+            "city": "Ahmedabad",
+            "income": 1874314.5
+        },
+        {
+            "customer_id": "C000043",
+            "name": "Gaurangi Kumar",
+            "age": 61,
+            "gender": "Male",
+            "occupation": "Consultant",
+            "city": "Pune",
+            "income": 2424451.22
+        },
+        {
+            "customer_id": "C000044",
+            "name": "Aarnav Mishra",
+            "age": 49,
+            "gender": "Female",
+            "occupation": "Business Owner",
+            "city": "Pune",
+            "income": 1071193.61
+        },
+        {
+            "customer_id": "C000045",
+            "name": "Onkar Dass",
+            "age": 27,
+            "gender": "Male",
+            "occupation": "Designer",
+            "city": "Ahmedabad",
+            "income": 334207.07
+        },
+        {
+            "customer_id": "C000046",
+            "name": "Jairaj Verma",
+            "age": 48,
+            "gender": "Female",
+            "occupation": "Sales Manager",
+            "city": "Lucknow",
+            "income": 523580.24
+        },
+        {
+            "customer_id": "C000047",
+            "name": "Jasmit Swaminathan",
+            "age": 53,
+            "gender": "Male",
+            "occupation": "Software Engineer",
+            "city": "Hyderabad",
+            "income": 776523.75
+        },
+        {
+            "customer_id": "C000048",
+            "name": "Logan Issac",
+            "age": 18,
+            "gender": "Male",
+            "occupation": "Software Engineer",
+            "city": "Lucknow",
+            "income": 1592132.55
+        },
+        {
+            "customer_id": "C000049",
+            "name": "Ojasvi Shenoy",
+            "age": 29,
+            "gender": "Male",
+            "occupation": "Doctor",
+            "city": "Chennai",
+            "income": 442381.41
+        },
+        {
+            "customer_id": "C000050",
+            "name": "Odika Nagar",
+            "age": 56,
+            "gender": "Male",
+            "occupation": "Teacher",
+            "city": "Hyderabad",
+            "income": 1977485.11
+        }
+    ],
+    "accounts": [
+        {
+            "account_id": "A000001",
+            "customer_id": "C000001",
+            "account_type": "Savings",
+            "balance": 70318.16,
+            "branch_id": "B0007"
+        },
+        {
+            "account_id": "A000002",
+            "customer_id": "C000002",
+            "account_type": "Current",
+            "balance": 202957.84,
+            "branch_id": "B0006"
+        },
+        {
+            "account_id": "A000003",
+            "customer_id": "C000003",
+            "account_type": "Current",
+            "balance": 206957.09,
+            "branch_id": "B0001"
+        },
+        {
+            "account_id": "A000004",
+            "customer_id": "C000004",
+            "account_type": "Current",
+            "balance": 476740.07,
+            "branch_id": "B0007"
+        },
+        {
+            "account_id": "A000005",
+            "customer_id": "C000005",
+            "account_type": "Current",
+            "balance": 231784.32,
+            "branch_id": "B0006"
+        },
+        {
+            "account_id": "A000006",
+            "customer_id": "C000006",
+            "account_type": "Savings",
+            "balance": 23557.19,
+            "branch_id": "B0004"
+        },
+        {
+            "account_id": "A000007",
+            "customer_id": "C000007",
+            "account_type": "Savings",
+            "balance": 37123.58,
+            "branch_id": "B0004"
+        },
+        {
+            "account_id": "A000008",
+            "customer_id": "C000008",
+            "account_type": "Savings",
+            "balance": 465211.82,
+            "branch_id": "B0002"
+        },
+        {
+            "account_id": "A000009",
+            "customer_id": "C000009",
+            "account_type": "Savings",
+            "balance": 185758.66,
+            "branch_id": "B0010"
+        },
+        {
+            "account_id": "A000010",
+            "customer_id": "C000010",
+            "account_type": "Current",
+            "balance": 78901.09,
+            "branch_id": "B0003"
+        },
+        {
+            "account_id": "A000011",
+            "customer_id": "C000011",
+            "account_type": "Savings",
+            "balance": 213092.41,
+            "branch_id": "B0005"
+        },
+        {
+            "account_id": "A000012",
+            "customer_id": "C000012",
+            "account_type": "Current",
+            "balance": 279369.43,
+            "branch_id": "B0007"
+        },
+        {
+            "account_id": "A000013",
+            "customer_id": "C000013",
+            "account_type": "Savings",
+            "balance": 29895.52,
+            "branch_id": "B0010"
+        },
+        {
+            "account_id": "A000014",
+            "customer_id": "C000014",
+            "account_type": "Savings",
+            "balance": 472955.31,
+            "branch_id": "B0002"
+        },
+        {
+            "account_id": "A000015",
+            "customer_id": "C000015",
+            "account_type": "Savings",
+            "balance": 51080.55,
+            "branch_id": "B0004"
+        },
+        {
+            "account_id": "A000016",
+            "customer_id": "C000016",
+            "account_type": "Current",
+            "balance": 381844.66,
+            "branch_id": "B0007"
+        },
+        {
+            "account_id": "A000017",
+            "customer_id": "C000017",
+            "account_type": "Current",
+            "balance": 41296.37,
+            "branch_id": "B0008"
+        },
+        {
+            "account_id": "A000018",
+            "customer_id": "C000018",
+            "account_type": "Current",
+            "balance": 404823.3,
+            "branch_id": "B0002"
+        },
+        {
+            "account_id": "A000019",
+            "customer_id": "C000019",
+            "account_type": "Current",
+            "balance": 371546.47,
+            "branch_id": "B0003"
+        },
+        {
+            "account_id": "A000020",
+            "customer_id": "C000020",
+            "account_type": "Savings",
+            "balance": 499362.66,
+            "branch_id": "B0005"
+        },
+        {
+            "account_id": "A000021",
+            "customer_id": "C000021",
+            "account_type": "Savings",
+            "balance": 435838.58,
+            "branch_id": "B0004"
+        },
+        {
+            "account_id": "A000022",
+            "customer_id": "C000022",
+            "account_type": "Savings",
+            "balance": 457086.2,
+            "branch_id": "B0010"
+        },
+        {
+            "account_id": "A000023",
+            "customer_id": "C000023",
+            "account_type": "Savings",
+            "balance": 370441.31,
+            "branch_id": "B0001"
+        },
+        {
+            "account_id": "A000024",
+            "customer_id": "C000024",
+            "account_type": "Current",
+            "balance": 335691.74,
+            "branch_id": "B0001"
+        },
+        {
+            "account_id": "A000025",
+            "customer_id": "C000025",
+            "account_type": "Current",
+            "balance": 389209.91,
+            "branch_id": "B0002"
+        },
+        {
+            "account_id": "A000026",
+            "customer_id": "C000026",
+            "account_type": "Savings",
+            "balance": 167753.88,
+            "branch_id": "B0003"
+        },
+        {
+            "account_id": "A000027",
+            "customer_id": "C000027",
+            "account_type": "Savings",
+            "balance": 155267.15,
+            "branch_id": "B0002"
+        },
+        {
+            "account_id": "A000028",
+            "customer_id": "C000028",
+            "account_type": "Current",
+            "balance": 312559.29,
+            "branch_id": "B0005"
+        },
+        {
+            "account_id": "A000029",
+            "customer_id": "C000029",
+            "account_type": "Savings",
+            "balance": 40338.36,
+            "branch_id": "B0004"
+        },
+        {
+            "account_id": "A000030",
+            "customer_id": "C000030",
+            "account_type": "Current",
+            "balance": 359869.05,
+            "branch_id": "B0004"
+        },
+        {
+            "account_id": "A000031",
+            "customer_id": "C000031",
+            "account_type": "Current",
+            "balance": 175240.45,
+            "branch_id": "B0002"
+        },
+        {
+            "account_id": "A000032",
+            "customer_id": "C000032",
+            "account_type": "Current",
+            "balance": 492951.83,
+            "branch_id": "B0001"
+        },
+        {
+            "account_id": "A000033",
+            "customer_id": "C000033",
+            "account_type": "Savings",
+            "balance": 82970.42,
+            "branch_id": "B0007"
+        },
+        {
+            "account_id": "A000034",
+            "customer_id": "C000034",
+            "account_type": "Savings",
+            "balance": 181304.89,
+            "branch_id": "B0007"
+        },
+        {
+            "account_id": "A000035",
+            "customer_id": "C000035",
+            "account_type": "Savings",
+            "balance": 399623.47,
+            "branch_id": "B0004"
+        },
+        {
+            "account_id": "A000036",
+            "customer_id": "C000036",
+            "account_type": "Current",
+            "balance": 287030.08,
+            "branch_id": "B0005"
+        },
+        {
+            "account_id": "A000037",
+            "customer_id": "C000037",
+            "account_type": "Savings",
+            "balance": 362205.4,
+            "branch_id": "B0008"
+        },
+        {
+            "account_id": "A000038",
+            "customer_id": "C000038",
+            "account_type": "Current",
+            "balance": 200276.02,
+            "branch_id": "B0006"
+        },
+        {
+            "account_id": "A000039",
+            "customer_id": "C000039",
+            "account_type": "Current",
+            "balance": 328791.32,
+            "branch_id": "B0001"
+        },
+        {
+            "account_id": "A000040",
+            "customer_id": "C000040",
+            "account_type": "Current",
+            "balance": 248534.3,
+            "branch_id": "B0005"
+        },
+        {
+            "account_id": "A000041",
+            "customer_id": "C000041",
+            "account_type": "Savings",
+            "balance": 340019.25,
+            "branch_id": "B0003"
+        },
+        {
+            "account_id": "A000042",
+            "customer_id": "C000042",
+            "account_type": "Current",
+            "balance": 131369.78,
+            "branch_id": "B0004"
+        },
+        {
+            "account_id": "A000043",
+            "customer_id": "C000043",
+            "account_type": "Savings",
+            "balance": 360441.56,
+            "branch_id": "B0009"
+        },
+        {
+            "account_id": "A000044",
+            "customer_id": "C000044",
+            "account_type": "Current",
+            "balance": 175922.33,
+            "branch_id": "B0006"
+        },
+        {
+            "account_id": "A000045",
+            "customer_id": "C000045",
+            "account_type": "Savings",
+            "balance": 263856.34,
+            "branch_id": "B0010"
+        },
+        {
+            "account_id": "A000046",
+            "customer_id": "C000046",
+            "account_type": "Savings",
+            "balance": 135268.34,
+            "branch_id": "B0005"
+        },
+        {
+            "account_id": "A000047",
+            "customer_id": "C000047",
+            "account_type": "Current",
+            "balance": 444317.3,
+            "branch_id": "B0010"
+        },
+        {
+            "account_id": "A000048",
+            "customer_id": "C000048",
+            "account_type": "Savings",
+            "balance": 496982.43,
+            "branch_id": "B0005"
+        },
+        {
+            "account_id": "A000049",
+            "customer_id": "C000049",
+            "account_type": "Current",
+            "balance": 426591.58,
+            "branch_id": "B0005"
+        },
+        {
+            "account_id": "A000050",
+            "customer_id": "C000050",
+            "account_type": "Savings",
+            "balance": 187822.28,
+            "branch_id": "B0005"
+        }
+    ]
+}
