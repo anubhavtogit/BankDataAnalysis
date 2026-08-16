@@ -1,18 +1,14 @@
-import json
 import random
 from datetime import datetime
-from pathlib import Path
 
 from models import Transaction
 
-import json
-import random
-
-from datetime import datetime
-from pathlib import Path
-
-from models import Transaction
 from banking_rules import process_transaction
+
+
+# =========================================================
+# GENERATE TRANSACTIONS
+# =========================================================
 
 def generate_transactions(
     accounts,
@@ -21,31 +17,62 @@ def generate_transactions(
 ):
 
     transactions = []
+
     fraud_events = []
 
     transaction_types = [
+
         "Purchase",
+
         "ATM Withdrawal",
+
         "Bank Transfer",
+
         "Bill Payment",
+
         "UPI Payment"
     ]
 
     payment_methods = [
+
         "UPI",
+
         "Debit Card",
+
         "ATM",
+
         "Net Banking",
+
         "Mobile Banking"
     ]
 
-    for i in range(1, count + 1):
 
-        account = random.choice(accounts)
+    # -----------------------------------------------------
+    # Generate transactions
+    # -----------------------------------------------------
+
+    for i in range(
+        1,
+        count + 1
+    ):
+
+        account = random.choice(
+            accounts
+        )
+
+
+        # -------------------------------------------------
+        # Transaction type
+        # -------------------------------------------------
 
         transaction_type = random.choice(
             transaction_types
         )
+
+
+        # -------------------------------------------------
+        # Merchant
+        # -------------------------------------------------
 
         if transaction_type == "ATM Withdrawal":
 
@@ -53,12 +80,26 @@ def generate_transactions(
 
         else:
 
-            merchant = random.choice(merchants)
-            merchant_id = merchant.merchant_id
+            merchant = random.choice(
+                merchants
+            )
+
+            merchant_id = (
+                merchant.merchant_id
+            )
+
+
+        # -------------------------------------------------
+        # Create transaction
+        # -------------------------------------------------
 
         transaction = Transaction(
-            transaction_id=f"T{i:08d}",
 
+            #transaction_id=f"T{i:08d}",
+            transaction_id=(
+                f"T{datetime.now().strftime('%Y%m%d%H%M%S')}"
+                f"{i:04d}"
+                ),
             account_id=account.account_id,
 
             customer_id=account.customer_id,
@@ -66,7 +107,10 @@ def generate_transactions(
             merchant_id=merchant_id,
 
             amount=round(
-                random.uniform(100, 100000),
+                random.uniform(
+                    100,
+                    100000
+                ),
                 2
             ),
 
@@ -77,19 +121,47 @@ def generate_transactions(
             ),
 
             status=random.choices(
-                ["SUCCESS", "FAILED", "PENDING"],
-                weights=[90, 7, 3]
+
+                [
+                    "SUCCESS",
+                    "FAILED",
+                    "PENDING"
+                ],
+
+                weights=[
+                    90,
+                    7,
+                    3
+                ]
+
             )[0],
 
             timestamp=datetime.now()
         )
 
-        transaction, fraud_event = process_transaction(
-            transaction,
-            account
+
+        # -------------------------------------------------
+        # Fraud processing
+        # -------------------------------------------------
+
+        transaction, fraud_event = (
+            process_transaction(
+
+                transaction,
+
+                account
+            )
         )
 
-        transactions.append(transaction)
+
+        transactions.append(
+            transaction
+        )
+
+
+        # -------------------------------------------------
+        # Store fraud event
+        # -------------------------------------------------
 
         if fraud_event:
 
@@ -97,92 +169,8 @@ def generate_transactions(
                 fraud_event
             )
 
-    return transactions, fraud_events
 
-
-def save_transactions(transactions):
-
-    output_directory = Path(
-        "data/raw/transactions"
+    return (
+        transactions,
+        fraud_events
     )
-
-    output_directory.mkdir(
-        parents=True,
-        exist_ok=True
-    )
-
-    timestamp = datetime.now().strftime(
-        "%Y%m%d_%H%M%S"
-    )
-
-    file_path = (
-        output_directory
-        / f"transactions_{timestamp}.json"
-    )
-
-    records = [
-        transaction.model_dump()
-        for transaction in transactions
-    ]
-
-    with open(
-        file_path,
-        "w",
-        encoding="utf-8"
-    ) as file:
-
-        json.dump(
-            records,
-            file,
-            indent=4,
-            ensure_ascii=False,
-            default=str
-        )
-
-    print(f"Created: {file_path}")
-
-    return file_path
-
-def save_fraud_events(fraud_events):
-
-    output_directory = Path(
-        "data/raw/fraud"
-    )
-
-    output_directory.mkdir(
-        parents=True,
-        exist_ok=True
-    )
-
-    timestamp = datetime.now().strftime(
-        "%Y%m%d_%H%M%S"
-    )
-
-    file_path = (
-        output_directory
-        / f"fraud_{timestamp}.json"
-    )
-
-    records = [
-        event.model_dump()
-        for event in fraud_events
-    ]
-
-    with open(
-        file_path,
-        "w",
-        encoding="utf-8"
-    ) as file:
-
-        json.dump(
-            records,
-            file,
-            indent=4,
-            default=str
-        )
-
-    print(
-        f"Created fraud file: {file_path}"
-    )
-
-    return file_path
